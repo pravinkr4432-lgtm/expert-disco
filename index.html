@@ -1,0 +1,2809 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Rinku Ji ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+   RESET
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #07070b;
+            color: #fff;
+
+            font-family:
+                "DM Sans",
+                "Noto Sans Devanagari",
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* =========================================================
+   BACKGROUND
+========================================================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 50% 50%,
+                    #21131d 0%,
+                    #0d090e 45%,
+                    #050507 100%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: .34;
+
+            animation:
+                orbMove 14s ease-in-out infinite alternate;
+        }
+
+        .orb1 {
+            width: 430px;
+            height: 430px;
+            background: #ff4f91;
+            top: -180px;
+            left: -130px;
+        }
+
+        .orb2 {
+            width: 520px;
+            height: 520px;
+            background: #7057ff;
+            right: -240px;
+            top: 25%;
+            animation-delay: -5s;
+        }
+
+        .orb3 {
+            width: 360px;
+            height: 360px;
+            background: #ff795c;
+            bottom: -160px;
+            left: 35%;
+            animation-delay: -9s;
+        }
+
+        @keyframes orbMove {
+
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(110px, 80px) scale(1.15);
+            }
+
+            100% {
+                transform: translate(-90px, 130px) scale(.9);
+            }
+        }
+
+
+        /* =========================================================
+   PARTICLES
+========================================================= */
+
+        #particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -3;
+        }
+
+        .particle {
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            border-radius: 50%;
+
+            background: #fff;
+
+            opacity: .35;
+
+            animation:
+                particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+
+            0% {
+                transform: translateY(110vh) scale(.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: .5;
+            }
+
+            80% {
+                opacity: .5;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1.3);
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================================================
+   NAVBAR
+========================================================= */
+
+        nav {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 72px;
+
+            padding: 0 clamp(20px, 6vw, 80px);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            z-index: 100;
+
+            background: rgba(7, 7, 11, .48);
+
+            backdrop-filter: blur(22px);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, .06);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #ff91b4;
+
+            display: inline-block;
+
+            animation:
+                heartbeat 1.8s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: clamp(15px, 2.5vw, 30px);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+
+        /* mobile menu button */
+
+        .menu-btn {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid rgba(255, 255, 255, .1);
+
+            background: rgba(255, 255, 255, .05);
+
+            color: #fff;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            font-size: 20px;
+        }
+
+
+        /* mobile menu */
+
+        .mobile-menu {
+            position: fixed;
+
+            top: 72px;
+            left: 0;
+
+            width: 100%;
+
+            padding: 20px;
+
+            background:
+                rgba(9, 8, 12, .95);
+
+            backdrop-filter: blur(25px);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, .08);
+
+            display: none;
+
+            z-index: 99;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            transition: .3s;
+        }
+
+        .mobile-menu a:hover {
+            background:
+                rgba(255, 145, 180, .08);
+
+            color: #fff;
+        }
+
+
+        /* =========================================================
+   HERO
+========================================================= */
+
+        .hero {
+            min-height: 100svh;
+
+            padding:
+                130px 20px 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+
+            animation:
+                heroIn 1.5s ease forwards;
+        }
+
+        @keyframes heroIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eyebrow {
+            color: #ff91b4;
+
+            text-transform: uppercase;
+
+            letter-spacing:
+                clamp(2px, 1vw, 5px);
+
+            font-size: 11px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(68px, 12vw, 160px);
+
+            line-height: .82;
+
+            font-weight: 500;
+
+            letter-spacing:
+                clamp(-6px, -.5vw, -3px);
+        }
+
+        .hero h1 span {
+            color: #ff91b4;
+
+            font-style: italic;
+
+            display: inline-block;
+
+            animation:
+                nameFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes nameFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .hero-text {
+            max-width: 680px;
+
+            margin: 40px auto 0;
+
+            color: #999;
+
+            font-size:
+                clamp(15px, 2vw, 18px);
+
+            line-height: 2;
+        }
+
+        .hero-text strong {
+            color: #fff;
+        }
+
+        .hero-text .flirt {
+            color: #ff91b4;
+        }
+
+        .scroll {
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #666;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            white-space: nowrap;
+        }
+
+        .scroll::after {
+            content: "";
+
+            display: block;
+
+            width: 1px;
+
+            height: 40px;
+
+            margin: 12px auto 0;
+
+            background:
+                linear-gradient(#777,
+                    transparent);
+
+            animation:
+                scrollLine 2s infinite;
+        }
+
+        @keyframes scrollLine {
+
+            0% {
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+
+            50% {
+                transform: scaleY(1);
+            }
+
+            100% {
+                transform: scaleY(0);
+                transform-origin: bottom;
+            }
+        }
+
+
+        /* =========================================================
+   MARQUEE
+========================================================= */
+
+        .marquee {
+            overflow: hidden;
+
+            white-space: nowrap;
+
+            padding: 42px 0;
+
+            border-top:
+                1px solid rgba(255, 255, 255, .06);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, .06);
+        }
+
+        .marquee-track {
+            display: inline-block;
+
+            animation:
+                marquee 28s linear infinite;
+        }
+
+        .marquee span {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(38px, 5vw, 55px);
+
+            margin-right: 65px;
+
+            color:
+                rgba(255, 255, 255, .1);
+        }
+
+        .marquee .pink {
+            color: #ff91b4;
+        }
+
+        @keyframes marquee {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* =========================================================
+   COMMON
+========================================================= */
+
+        section {
+            padding:
+                clamp(85px, 10vw, 130px) clamp(18px, 7vw, 100px);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .label {
+            color: #ff91b4;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            font-size: 11px;
+
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(43px, 6vw, 75px);
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            margin-bottom:
+                clamp(38px, 5vw, 55px);
+        }
+
+
+        /* =========================================================
+   NAINA
+========================================================= */
+
+        .naina-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.15fr .85fr;
+
+            gap: 22px;
+        }
+
+        .card {
+            padding:
+                clamp(28px, 4vw, 45px);
+
+            border-radius:
+                clamp(22px, 3vw, 30px);
+
+            background:
+                rgba(255, 255, 255, .045);
+
+            border:
+                1px solid rgba(255, 255, 255, .08);
+
+            backdrop-filter: blur(20px);
+
+            transition:
+                transform .5s,
+                background .5s,
+                border .5s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            background:
+                rgba(255, 255, 255, .07);
+
+            border-color:
+                rgba(255, 145, 180, .3);
+        }
+
+        .card h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(30px, 4vw, 35px);
+
+            margin-bottom: 25px;
+        }
+
+        .card p {
+            color: #aaa;
+
+            font-size:
+                clamp(15px, 2vw, 17px);
+
+            line-height: 2;
+        }
+
+        .card p strong {
+            color: #fff;
+        }
+
+
+        /* =========================================================
+   QUALITIES
+========================================================= */
+
+        .qualities {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 14px;
+
+            margin-top: 30px;
+        }
+
+        .quality {
+            padding: 20px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255, 255, 255, .035);
+
+            border:
+                1px solid rgba(255, 255, 255, .05);
+
+            transition: .4s;
+        }
+
+        .quality:hover {
+            transform: translateX(6px);
+
+            background:
+                rgba(255, 145, 180, .08);
+        }
+
+        .quality-number {
+            color: #ff91b4;
+
+            font-size: 11px;
+
+            margin-bottom: 8px;
+        }
+
+        .quality h3 {
+            font-size: 17px;
+
+            margin-bottom: 6px;
+        }
+
+        .quality p {
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+   QUOTE
+========================================================= */
+
+        .quote-card {
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .quote-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 240px;
+            height: 240px;
+
+            border-radius: 50%;
+
+            background: #ff5c98;
+
+            filter: blur(80px);
+
+            opacity: .2;
+
+            animation:
+                quoteGlow 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes quoteGlow {
+
+            from {
+                transform: translate(-100px, -80px);
+            }
+
+            to {
+                transform: translate(100px, 80px);
+            }
+        }
+
+        .quote {
+            position: relative;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(28px, 4vw, 46px);
+
+            line-height: 1.4;
+        }
+
+        .quote span {
+            color: #ff91b4;
+
+            font-style: italic;
+        }
+
+
+        /* =========================================================
+   EFFORT
+========================================================= */
+
+        .effort {
+            text-align: center;
+        }
+
+        .effort-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding:
+                clamp(35px, 6vw, 65px) clamp(22px, 5vw, 50px);
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(255, 255, 255, .08),
+                    rgba(255, 255, 255, .025));
+
+            border:
+                1px solid rgba(255, 255, 255, .09);
+
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, .3);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .effort-box::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: #ff91b4;
+
+            filter: blur(100px);
+
+            opacity: .08;
+
+            right: -80px;
+            top: -80px;
+
+            animation:
+                effortGlow 5s infinite alternate;
+        }
+
+        @keyframes effortGlow {
+
+            from {
+                transform: scale(.8);
+            }
+
+            to {
+                transform: scale(1.5);
+            }
+        }
+
+        .effort-box h2 {
+            position: relative;
+            z-index: 2;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(38px, 5vw, 65px);
+
+            line-height: 1.1;
+
+            margin-bottom: 30px;
+        }
+
+        .effort-box p {
+            position: relative;
+            z-index: 2;
+
+            color: #aaa;
+
+            font-size:
+                clamp(15px, 2vw, 18px);
+
+            line-height: 2;
+        }
+
+        .effort-box strong {
+            color: #fff;
+        }
+
+
+        /* =========================================================
+   LOVE LETTER
+========================================================= */
+
+        .letter {
+            max-width: 800px;
+
+            margin: auto;
+
+            padding:
+                clamp(30px, 5vw, 55px);
+
+            border-radius: 30px;
+
+            background:
+                rgba(255, 255, 255, .045);
+
+            border:
+                1px solid rgba(255, 255, 255, .08);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .letter::before {
+            content: "";
+
+            position: absolute;
+
+            width: 2px;
+            height: 100%;
+
+            top: 0;
+            left: 0;
+
+            background:
+                linear-gradient(transparent,
+                    #ff91b4,
+                    transparent);
+
+            animation:
+                letterGlow 3s infinite;
+        }
+
+        @keyframes letterGlow {
+
+            0%,
+            100% {
+                opacity: .2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .letter p {
+            color: #aaa;
+
+            font-size:
+                clamp(15px, 2vw, 18px);
+
+            line-height: 2.1;
+
+            margin-bottom: 20px;
+        }
+
+        .letter strong {
+            color: #fff;
+        }
+
+        .signature {
+            color: #fff;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 25px;
+
+            margin-top: 35px;
+        }
+
+
+        /* =========================================================
+   LITTLE THINGS
+========================================================= */
+
+        .little-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .little {
+            padding: 35px 30px;
+
+            min-height: 230px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255, 255, 255, .04);
+
+            border:
+                1px solid rgba(255, 255, 255, .07);
+
+            transition: .4s;
+        }
+
+        .little:hover {
+            transform: translateY(-10px);
+
+            border-color:
+                rgba(255, 145, 180, .25);
+        }
+
+        .little-icon {
+            font-size: 27px;
+
+            margin-bottom: 20px;
+
+            display: inline-block;
+
+            animation:
+                iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .little h3 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+        .little p {
+            color: #888;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+   FLIRTY INTERACTIVE SECTION
+========================================================= */
+
+        .flirt-section {
+            text-align: center;
+
+            position: relative;
+        }
+
+        .flirt-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding:
+                clamp(40px, 7vw, 75px) clamp(25px, 6vw, 60px);
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(255, 145, 180, .1),
+                    rgba(255, 255, 255, .035));
+
+            border:
+                1px solid rgba(255, 145, 180, .18);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .flirt-box h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(40px, 6vw, 68px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+        .flirt-box h2 span {
+            color: #ff91b4;
+
+            font-style: italic;
+        }
+
+        .flirt-box p {
+            color: #999;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            font-size:
+                clamp(15px, 2vw, 18px);
+
+            line-height: 1.9;
+        }
+
+        .flirt-btn {
+            margin-top: 32px;
+
+            padding: 15px 28px;
+
+            border: 1px solid rgba(255, 145, 180, .3);
+
+            border-radius: 50px;
+
+            background:
+                rgba(255, 145, 180, .08);
+
+            color: #fff;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            transition: .4s;
+        }
+
+        .flirt-btn:hover {
+            background: #ff91b4;
+
+            color: #111;
+
+            transform:
+                translateY(-4px) scale(1.04);
+
+            box-shadow:
+                0 10px 40px rgba(255, 145, 180, .25);
+        }
+
+        .flirt-answer {
+            min-height: 30px;
+
+            margin-top: 25px;
+
+            color: #ffb2c9;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-style: italic;
+
+            font-size: 21px;
+
+            opacity: 0;
+
+            transform: translateY(10px);
+
+            transition: .5s;
+        }
+
+        .flirt-answer.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+   FINAL
+========================================================= */
+
+        .final {
+            min-height: 90vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .final-content {
+            max-width: 900px;
+        }
+
+        .final h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(48px, 8vw, 100px);
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            margin-bottom: 35px;
+        }
+
+        .final h2 span {
+            color: #ff91b4;
+
+            font-style: italic;
+        }
+
+        .final p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #888;
+
+            font-size:
+                clamp(15px, 2vw, 18px);
+
+            line-height: 2;
+        }
+
+        .final p strong {
+            color: #fff;
+        }
+
+        .surprise-btn {
+            margin-top: 40px;
+
+            padding: 16px 32px;
+
+            border-radius: 50px;
+
+            border:
+                1px solid rgba(255, 255, 255, .15);
+
+            background:
+                rgba(255, 255, 255, .05);
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            transition: .4s;
+        }
+
+        .surprise-btn:hover {
+            background: #ff91b4;
+
+            color: #111;
+
+            transform: scale(1.07);
+
+            box-shadow:
+                0 0 40px rgba(255, 145, 180, .35);
+        }
+
+
+        /* =========================================================
+   MODAL
+========================================================= */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 500;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(0, 0, 0, .84);
+
+            backdrop-filter: blur(18px);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: .5s;
+        }
+
+        .modal.active {
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+        .modal-box {
+            width: min(620px, 100%);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            padding:
+                clamp(30px, 6vw, 55px) clamp(24px, 5vw, 45px);
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            background:
+                rgba(25, 22, 29, .96);
+
+            border:
+                1px solid rgba(255, 255, 255, .12);
+
+            transform: scale(.8);
+
+            transition: .5s;
+        }
+
+        .modal.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-box h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(34px, 6vw, 48px);
+
+            margin-bottom: 25px;
+        }
+
+        .modal-box p {
+            color: #aaa;
+
+            font-size:
+                clamp(15px, 2vw, 17px);
+
+            line-height: 2;
+        }
+
+        .modal-box strong {
+            color: #fff;
+        }
+
+        .close {
+            margin-top: 30px;
+
+            padding: 12px 27px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background: #fff;
+
+            color: #111;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        footer {
+            padding: 70px 20px 30px;
+
+            text-align: center;
+
+            color: #555;
+
+            border-top:
+                1px solid rgba(255, 255, 255, .06);
+        }
+
+        .footer-heart {
+            color: #ff91b4;
+
+            font-size: 32px;
+
+            display: inline-block;
+
+            animation:
+                heartbeat 1.7s infinite;
+        }
+
+        footer p {
+            margin-top: 12px;
+        }
+
+
+        /* =========================================================
+   TABLET
+========================================================= */
+
+        @media(max-width:950px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .naina-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-card {
+                min-height: 350px;
+            }
+
+            .little-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================================
+   MOBILE
+========================================================= */
+
+        @media(max-width:600px) {
+
+            nav {
+                height: 64px;
+
+                padding:
+                    0 18px;
+            }
+
+            .mobile-menu {
+                top: 64px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .hero {
+                min-height: 100svh;
+
+                padding:
+                    100px 18px 80px;
+            }
+
+            .hero h1 {
+                letter-spacing: -4px;
+            }
+
+            .hero-text {
+                margin-top: 30px;
+            }
+
+            .scroll {
+                bottom: 20px;
+            }
+
+            section {
+                padding:
+                    80px 18px;
+            }
+
+            .title {
+                margin-bottom: 38px;
+            }
+
+            .qualities {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 28px 22px;
+            }
+
+            .quote-card {
+                min-height: 300px;
+            }
+
+            .little-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .little {
+                min-height: 200px;
+            }
+
+            .letter {
+                padding:
+                    30px 24px;
+            }
+
+            .effort-box {
+                border-radius: 26px;
+            }
+
+            .flirt-box {
+                border-radius: 26px;
+            }
+
+            .modal-box {
+                border-radius: 24px;
+            }
+
+            .marquee {
+                padding: 32px 0;
+            }
+
+            .marquee span {
+                font-size: 35px;
+
+                margin-right: 40px;
+            }
+        }
+
+
+        /* =========================================================
+   SMALL PHONES
+========================================================= */
+
+        @media(max-width:380px) {
+
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .eyebrow {
+                letter-spacing: 2px;
+            }
+
+            .hero-text {
+                font-size: 14px;
+            }
+
+            .quality {
+                padding: 17px;
+            }
+
+            .little {
+                padding: 28px 22px;
+            }
+        }
+
+
+        /* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+    <div class="background">
+
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+
+    </div>
+
+    <div id="particles"></div>
+
+
+    <!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+    <nav>
+
+        <div class="logo">
+            <span>♥</span>
+            Rinku Ji
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#naina">Rinku Ji</a>
+            </li>
+
+            <li>
+                <a href="#effort">Ek Baat</a>
+            </li>
+
+            <li>
+                <a href="#little">Little Things</a>
+            </li>
+
+            <li>
+                <a href="#flirt">😌</a>
+            </li>
+
+        </ul>
+
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+
+            ☰
+
+        </button>
+
+    </nav>
+
+
+    <!-- mobile menu -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#home" onclick="closeMenu()">
+            Home
+        </a>
+
+        <a href="#naina" onclick="closeMenu()">
+            Rinku Ji
+        </a>
+
+        <a href="#effort" onclick="closeMenu()">
+            Ek Baat
+        </a>
+
+        <a href="#little" onclick="closeMenu()">
+            Little Things
+        </a>
+
+        <a href="#flirt" onclick="closeMenu()">
+            Ek Secret 😌
+        </a>
+
+    </div>
+
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Ek chhoti si jagah, sirf aapke liye
+            </div>
+
+            <h1>
+
+                Hey<br>
+
+                <span>Rinku.</span>
+
+            </h1>
+
+            <p class="hero-text">
+
+                Aap soch rahi hongi ki
+                <strong>ek website kyun?</strong>
+
+                <br><br>
+
+                Sach kahun ji...
+
+                <br>
+
+                kuch logon ke liye
+                sirf ek message likhna
+                thoda kam lagta hai.
+
+                <br><br>
+
+                Aur waise bhi...
+
+                <span class="flirt">
+                    aap itni special hain,
+                    toh thoda extra effort toh banta hai na? ♡
+                </span>
+
+            </p>
+
+        </div>
+
+
+        <div class="scroll">
+            AAGE DEKHIYE
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     MARQUEE
+========================================================= -->
+
+    <div class="marquee">
+
+        <div class="marquee-track">
+
+            <span>
+                Rinku ji, aap special hain
+            </span>
+
+            <span class="pink">
+                ✦
+            </span>
+
+            <span>
+                haan, isme effort laga hai
+            </span>
+
+            <span class="pink">
+                ✦
+            </span>
+
+            <span>
+                aur haan, aap cute bhi hain
+            </span>
+
+            <span class="pink">
+                ✦
+            </span>
+
+            <span>
+                Rinku ji, aap special hain
+            </span>
+
+            <span class="pink">
+                ✦
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     NAINA
+========================================================= -->
+
+    <section id="naina">
+
+        <div class="container">
+
+            <div class="label">
+                01 / NAINA JI
+            </div>
+
+            <h2 class="title">
+
+                Thoda sa<br>
+                aapke baare mein.
+
+            </h2>
+
+
+            <div class="naina-grid">
+
+
+                <div class="card">
+
+                    <h2>
+                        Rinku ji.
+                    </h2>
+
+                    <p>
+
+                        Aap un logon mein se hain
+                        jinke baare mein jitna kaha jaaye,
+                        utna hi kam lagta hai.
+
+                        <br><br>
+
+                        Aap cute hain,
+                        caring hain,
+                        thodi si pagal bhi hain...
+
+                        <br><br>
+
+                        aur haan,
+                        <strong>kabhi-kabhi gussa bhi bahut karti hain.</strong>
+
+                        😂
+
+                        <br><br>
+
+                        Lekin honestly,
+                        ye saari chhoti-chhoti cheezein hi
+                        toh aapko
+                        <strong>itna adorable</strong>
+                        banati hain.
+
+                    </p>
+
+
+                    <div class="qualities">
+
+
+                        <div class="quality">
+
+                            <div class="quality-number">
+                                01
+                            </div>
+
+                            <h3>
+                                Caring
+                            </h3>
+
+                            <p>
+                                Dil se care karti hain.
+                            </p>
+
+                        </div>
+
+
+                        <div class="quality">
+
+                            <div class="quality-number">
+                                02
+                            </div>
+
+                            <h3>
+                                Cute
+                            </h3>
+
+                            <p>
+                                Is point par argument allowed nahi hai. 😌
+                            </p>
+
+                        </div>
+
+
+                        <div class="quality">
+
+                            <div class="quality-number">
+                                03
+                            </div>
+
+                            <h3>
+                                Beautiful
+                            </h3>
+
+                            <p>
+                                Ye bolna zaroori tha ji.
+                            </p>
+
+                        </div>
+
+
+                        <div class="quality">
+
+                            <div class="quality-number">
+                                04
+                            </div>
+
+                            <h3>
+                                Special
+                            </h3>
+
+                            <p>
+                                Ye toh obvious hai.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="card quote-card">
+
+                    <div class="quote">
+
+                        "Kuch log
+                        paas na hoke bhi
+                        <span>bahut paas</span>
+                        lagte hain."
+
+                        <br><br>
+
+                        ♡
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     EFFORT
+========================================================= -->
+
+    <section class="effort" id="effort">
+
+        <div class="container">
+
+            <div class="label">
+                02 / EK BAAT
+            </div>
+
+            <h2 class="title">
+
+                Is website ka<br>
+                asli reason.
+
+            </h2>
+
+
+            <div class="effort-box">
+
+                <h2>
+                    Kyunki aapke liye<br>
+                    kuch banana tha.
+                </h2>
+
+                <p>
+
+                    Main simply ek message bhi bhej sakta tha.
+
+                    <br><br>
+
+                    "Rinku ji, aap bahut achhi hain."
+
+                    <br><br>
+
+                    Bas.
+
+                    <br><br>
+
+                    Lekin pata nahi kyun,
+                    mujhe laga ki aapke liye
+                    <strong>thoda extra effort</strong>
+                    karna chahiye.
+
+                    <br><br>
+
+                    Isliye ye website banayi.
+
+                    <br><br>
+
+                    Isme jo animation chal rahi hai,
+                    jo text aap padh rahi hain,
+                    jo chhoti-chhoti details hain...
+
+                    <br><br>
+
+                    <strong>
+                        sab jaan-bujhkar rakha hai.
+                    </strong>
+
+                    <br><br>
+
+                    Aapko impress karna hi goal nahi tha.
+
+                    <br>
+
+                    Bas aapko ye feel karwana tha ki
+
+                    <br><br>
+
+                    <strong>
+                        "Haan, mere liye kisi ne genuinely effort kiya."
+                    </strong>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     LETTER
+========================================================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="label">
+                03 / AAPKE LIYE
+            </div>
+
+            <h2 class="title">
+
+                Ek chhoti si<br>
+                baat.
+
+            </h2>
+
+
+            <div class="letter">
+
+                <p>
+                    Rinku ji,
+                </p>
+
+                <p>
+
+                    Mujhe nahi pata ki aap ye website
+                    dekhte waqt kya sochengi.
+
+                    Shayad hasengi.
+                    Shayad kahengi,
+                    "Pagal ho kya?" 😂
+
+                    Shayad thoda gussa bhi karein.
+
+                </p>
+
+                <p>
+
+                    Lekin agar kabhi aapka mood kharab ho,
+                    ya kisi din aapko lage ki
+                    aap enough nahi hain...
+
+                    toh bas itna yaad rakhiyega:
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Aap jaisi hain,
+                        waise hi bahut achhi hain.
+                    </strong>
+
+                </p>
+
+                <p>
+
+                    Aapko har waqt perfect hone ki
+                    zarurat nahi hai.
+
+                    <br>
+
+                    Aapko har kisi ko khush karne ki
+                    zarurat nahi hai.
+
+                    <br>
+
+                    Aur har baar strong dikhne ki bhi
+                    zarurat nahi hai.
+
+                </p>
+
+                <p>
+
+                    Bas Rinku ji bani rahiye.
+
+                    <br>
+
+                    Wahi kaafi hai.
+
+                    <br>
+
+                    Aur haan...
+
+                    <br>
+
+                    <strong>
+                        thoda sa mujhe bhi tolerate karti rahiye. 😭❤️
+                    </strong>
+
+                </p>
+
+
+                <div class="signature">
+
+                    — Aapka thoda sa pagal insaan
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     LITTLE THINGS
+========================================================= -->
+
+    <section id="little">
+
+        <div class="container">
+
+            <div class="label">
+                04 / LITTLE THINGS
+            </div>
+
+            <h2 class="title">
+
+                Aapki woh<br>
+                chhoti-chhoti baatein.
+
+            </h2>
+
+
+            <div class="little-grid">
+
+
+                <div class="little">
+
+                    <div class="little-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Aapka Care Karna
+                    </h3>
+
+                    <p>
+
+                        Shayad aapko normal lagta ho,
+                        lekin kisi ke liye aapka
+                        care karna kaafi special ho sakta hai.
+
+                    </p>
+
+                </div>
+
+
+                <div class="little">
+
+                    <div class="little-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Aapki Smile
+                    </h3>
+
+                    <p>
+
+                        Iske baare mein zyada bolunga
+                        toh aap sharmaengi,
+                        isliye filhaal itna hi. 😌
+
+                    </p>
+
+                </div>
+
+
+                <div class="little">
+
+                    <div class="little-icon">
+                        ☾
+                    </div>
+
+                    <h3>
+                        Aapki Randomness
+                    </h3>
+
+                    <p>
+
+                        Kabhi-kabhi samajh nahi aata
+                        aap kya bol rahi hain,
+                        lekin sunna phir bhi achha lagta hai.
+
+                    </p>
+
+                </div>
+
+
+                <div class="little">
+
+                    <div class="little-icon">
+                        ✧
+                    </div>
+
+                    <h3>
+                        Aapka Gussa
+                    </h3>
+
+                    <p>
+
+                        Thoda dangerous hai ji.
+
+                        <br>
+
+                        Lekin sach bolun?
+                        Gusse mein bhi cute lagti hain. 😭
+
+                    </p>
+
+                </div>
+
+
+                <div class="little">
+
+                    <div class="little-icon">
+                        ∞
+                    </div>
+
+                    <h3>
+                        Aapki Smile
+                    </h3>
+
+                    <p>
+
+                        Agar meri wajah se kabhi
+                        ek extra smile aa jaaye,
+                        toh website successful samjhoonga. ♡
+
+                    </p>
+
+                </div>
+
+
+                <div class="little">
+
+                    <div class="little-icon">
+                        ♥
+                    </div>
+
+                    <h3>
+                        Bas Aap
+                    </h3>
+
+                    <p>
+
+                        Koi complicated reason nahi.
+
+                        <br>
+
+                        Bas Rinku ji,
+                        aap important hain.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     FLIRTY SECTION
+========================================================= -->
+
+    <section class="flirt-section" id="flirt">
+
+        <div class="container">
+
+            <div class="label">
+                05 / EK SECRET
+            </div>
+
+            <div class="flirt-box">
+
+                <h2>
+
+                    Rinku ji,
+                    <span>ek sawaal?</span>
+
+                </h2>
+
+                <p>
+
+                    Aapko pata hai is website mein
+                    sabse difficult cheez kya thi?
+
+                    <br><br>
+
+                    Aapke baare mein likhte waqt
+                    <strong>flirt kam karna.</strong> 😭
+
+                </p>
+
+
+                <button class="flirt-btn" onclick="showFlirt()">
+
+                    Sawaal poochhiye ji 😌
+
+                </button>
+
+
+                <div class="flirt-answer" id="flirtAnswer">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     FINAL
+========================================================= -->
+
+    <section class="final">
+
+        <div class="final-content">
+
+            <div class="label">
+                06 / LAST THING
+            </div>
+
+            <h2>
+
+                Agar kabhi gussa ho jao,
+                <span>ye yaad rakhna.</span>
+
+            </h2>
+
+
+            <p>
+
+                Aap gussa ho sakti hain ji.
+
+                <br>
+
+                Mujhse naraz bhi ho sakti hain.
+
+                <br>
+
+                Mujhe daant bhi sakti hain.
+
+                😂
+
+                <br><br>
+
+                Lekin please ye mat sochna ki
+                aap important nahi hain.
+
+                <br><br>
+
+                Kyunki agar aap important nahi hoti,
+                toh main ye sab banane mein
+                itna time hi kyun lagata?
+
+                <br><br>
+
+                Aur waise bhi...
+
+                <br>
+
+                <strong>
+                    aapko manaane ka ek aur bahana mil gaya. 😌
+                </strong>
+
+                <br><br>
+
+                <strong>
+                    Aap special hain, Rinku ji.
+                </strong>
+
+            </p>
+
+
+            <button class="surprise-btn" onclick="openSurprise()">
+
+                Ek Last Surprise ♡
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+     MODAL
+========================================================= -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-box">
+
+            <h2>
+                Rinku ji... 🥹
+            </h2>
+
+            <p>
+
+                Agar aap yahan tak aa gayi hain,
+                toh ek baat aur kehni thi.
+
+                <br><br>
+
+                Shayad main har baar perfectly
+                express na kar paun ki
+                aap mere liye kya hain.
+
+                <br><br>
+
+                Lekin aapki presence
+                meri life ko genuinely
+                thoda aur achha banati hai.
+
+                <br><br>
+
+                Aur haan...
+
+                <br><br>
+
+                Agar abhi aap gussa hain,
+                toh please thoda sa kam kar lijiye. 😭
+
+                <br><br>
+
+                Maine itni mehnat se website banayi hai ji.
+
+                😂❤️
+
+                <br><br>
+
+                Aur agar smile aa gayi hai...
+
+                <br>
+
+                toh samajh lijiye
+                <strong>mera kaam ho gaya.</strong>
+
+                <br><br>
+
+                Smile kar dijiye, Rinku ji. ♡
+
+            </p>
+
+
+            <button class="close" onclick="closeSurprise()">
+
+                Theek hai ji ♡
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="footer-heart">
+            ♡
+        </div>
+
+        <p>
+            Made with way too much effort.
+        </p>
+
+        <p>
+            Just for Rinku ji.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        /* =========================================================
+           PARTICLES
+        ========================================================= */
+
+        const particleContainer =
+            document.getElementById("particles");
+
+        for (let i = 0; i < 85; i++) {
+
+            const particle =
+                document.createElement("div");
+
+            particle.className =
+                "particle";
+
+            particle.style.left =
+                Math.random() * 100 + "%";
+
+            particle.style.animationDuration =
+                (7 + Math.random() * 13) + "s";
+
+            particle.style.animationDelay =
+                Math.random() * 10 + "s";
+
+            particleContainer.appendChild(
+                particle
+            );
+        }
+
+
+        /* =========================================================
+           MOUSE PARALLAX
+        ========================================================= */
+
+        const orbs =
+            document.querySelectorAll(".orb");
+
+        document.addEventListener(
+            "mousemove",
+            function (e) {
+
+                const x =
+                    e.clientX /
+                    window.innerWidth -
+                    .5;
+
+                const y =
+                    e.clientY /
+                    window.innerHeight -
+                    .5;
+
+                orbs.forEach(
+                    (orb, index) => {
+
+                        const strength =
+                            (index + 1) * 13;
+
+                        orb.style.marginLeft =
+                            x * strength + "px";
+
+                        orb.style.marginTop =
+                            y * strength + "px";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        function toggleMenu() {
+
+            document
+                .getElementById("mobileMenu")
+                .classList.toggle("active");
+
+        }
+
+        function closeMenu() {
+
+            document
+                .getElementById("mobileMenu")
+                .classList.remove("active");
+
+        }
+
+
+        /* =========================================================
+           FLIRTY BUTTON
+        ========================================================= */
+
+        const flirtMessages = [
+
+            "Sawaal ye hai ki aap itni cute naturally hain ya practice karti hain? 😌",
+
+            "Ek honest answer chahiye... aapko pata hai na ki aap mujhe kitni achhi lagti hain? 👀",
+
+            "Aap smile kar rahi hain na? Bas wahi toh dekhna tha. ♡",
+
+            "Main compliment dene wala tha... phir laga aap already jaanti hain ki aap pretty hain. 😭",
+
+            "Sach bataiye ji, ye website dekh kar thoda sa special feel hua na? 😌❤️"
+
+        ];
+
+        let flirtIndex = 0;
+
+        function showFlirt() {
+
+            const answer =
+                document.getElementById(
+                    "flirtAnswer"
+                );
+
+            answer.classList.remove("show");
+
+            setTimeout(() => {
+
+                answer.innerText =
+                    flirtMessages[flirtIndex];
+
+                answer.classList.add("show");
+
+                flirtIndex++;
+
+                if (
+                    flirtIndex >= flirtMessages.length
+                ) {
+                    flirtIndex = 0;
+                }
+
+                createHearts();
+
+            }, 150);
+
+        }
+
+
+        /* =========================================================
+           SURPRISE
+        ========================================================= */
+
+        function openSurprise() {
+
+            document
+                .getElementById("modal")
+                .classList.add("active");
+
+            createHearts();
+
+        }
+
+        function closeSurprise() {
+
+            document
+                .getElementById("modal")
+                .classList.remove("active");
+
+        }
+
+
+        /* =========================================================
+           FLOATING HEARTS
+        ========================================================= */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.innerHTML =
+                [
+                    "♡",
+                    "♥",
+                    "✦",
+                    "✧"
+                ][
+                Math.floor(
+                    Math.random() * 4
+                )
+                ];
+
+            heart.style.position =
+                "fixed";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.bottom =
+                "-30px";
+
+            heart.style.fontSize =
+                (15 + Math.random() * 25) + "px";
+
+            heart.style.color =
+                "#ff91b4";
+
+            heart.style.zIndex =
+                "1000";
+
+            heart.style.pointerEvents =
+                "none";
+
+            heart.style.transition =
+                "transform 5s linear, opacity 5s linear";
+
+            document.body.appendChild(
+                heart
+            );
+
+            requestAnimationFrame(
+                () => {
+
+                    heart.style.transform =
+                        `translateY(-${window.innerHeight + 100
+                        }px)
+                rotate(${Math.random() * 360
+                        }deg)`;
+
+                    heart.style.opacity =
+                        "0";
+
+                }
+            );
+
+            setTimeout(
+                () => {
+                    heart.remove();
+                },
+                5000
+            );
+
+        }
+
+
+        function createHearts() {
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+                setTimeout(
+                    createHeart,
+                    i * 90
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           RANDOM AMBIENT HEARTS
+        ========================================================= */
+
+        setInterval(
+            () => {
+
+                if (
+                    Math.random() > .72
+                ) {
+
+                    createHeart();
+
+                }
+
+            },
+            4000
+        );
+
+
+        /* =========================================================
+           ESC TO CLOSE
+        ========================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (e) {
+
+                if (
+                    e.key === "Escape"
+                ) {
+
+                    closeSurprise();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
+```
